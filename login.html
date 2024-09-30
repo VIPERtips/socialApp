@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Social Media</title>
+  <style>
+     * {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto medium";
+  box-sizing: border-box;
+ }
+
+ html {
+  scroll-behavior: smooth;
+ }
+ body {
+  background: #000;
+  color: white;
+ }
+
+ .container {
+  padding: 10px 20%;
+ }
+
+ nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ }
+
+ .logo {
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .redB {
+  color: rgb(253, 107, 2);
+ }
+
+ nav {
+  background-color: rgba(0, 0, 0, 0.57);
+  top: 0;
+  right: 10px;
+  padding: 16px;
+  border-radius: 15px;
+  position: absolute;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 10px 20px;
+  padding: 0;
+  display: inline-block;
+}
+
+nav ul li a {
+  color:  #fff;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  transition:  0.5s;
+}
+
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color:#ff6f00 ;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+  width:  100%;
+}
+
+
+.contact-right {
+  flex-basis: 60%;
+  margin-top: 20px;
+ }
+ .contact-right form {
+  width: 100%;
+ }
+
+ form input, form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+ }
+
+ .btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #1aff00;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.5s;
+ }
+
+ .btn.btn2 {
+  display: inline-block;
+  background-color: #181f17;
+ }
+ .btn:hover {
+  background: #51ff0093;
+ }
+
+ form .btn2 {
+  padding: 14px 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+ }
+
+@media only screen and (max-width : 600px) {
+  #header {
+    background: url(phoneBg.png);
+    background-size: contain;
+  }
+  .header-text {
+    margin-top: 100%;
+    font-size: 16px;
+  }
+
+  .header-text h1 {
+    font-size: 30px;
+  }
+  nav  .bi-icon {
+    display: block;
+    font-size: 25px;
+   }
+
+   nav ul {
+    background: #ff8000be;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+   }
+
+   nav ul li {
+    display: block;
+    margin: 25px;
+   }
+
+   nav ul .bi-icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+   }
+   .copyright {
+    font-size: 14px;
+   }
+ } 
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <h1 class="logo">App Name</h1>
+      <nav>
+        <ul id="sideMenu">
+          <li><a href="#header"><i class="bi bi-house"></i> Login</a></li>
+          <li><a href="#about"><i class="bi bi-bullseye"></i> Sign UP</a></li>
+          <i class="bi bi-x-circle bi-icon" onclick="closeMenu()"></i>
+        </ul>
+        <i class="bi bi-list bi-icon"onclick="openMenu()"></i>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact">
+    <div class="container">
+        <div id="contact">
+            <h2>Welcome to App Name</h2>
+            <p>Enter Your Login Credentials to start ___fancy_word___</p>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <label for="name"><i class="fas fa-user-edit"></i> Username:</label>
+                    <input type="text" name="Name" placeholder="Enter Username" required>
+                    <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                    <input type="email" name="Email" placeholder="Enter Email" required>
+                    <a href="#" class="forgot-password">Forgot-password</a><br>
+                    <p>No account yet ?? <span><a href="signup.html">Sign Up Now</a></span></p>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script>
+    let sideMenu = document.getElementById('sideMenu');
+
+function openMenu(){
+  sideMenu.style.right = "0";
+}
+
+function closeMenu(){
+  sideMenu.style.right = "-200px";
+}
+  </script>
+</body>
+</html>
